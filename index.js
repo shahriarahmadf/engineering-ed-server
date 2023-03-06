@@ -6,11 +6,6 @@ app.use(cors());
 
 const courses = require('./data/courses.json');
 
-app.get('/', (req,res) => {
-    res.send('Courses API running');
-    console.log(res.courses);
-})
-
 app.get('/courses', (req,res) => {
     res.send(courses);
 })
