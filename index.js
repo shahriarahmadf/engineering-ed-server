@@ -17,6 +17,13 @@ app.get('/course-details/:course_id', (req,res) => {
     res.send(selectedCourse);
 })
 
+app.get('/checkout-page/:course_id', (req,res) => {
+    const course_id = req.params.course_id;
+    console.log(course_id);
+    const selectedCourse = courses.find(course => course.course_id === course_id);
+    res.send(selectedCourse);
+})
+
 app.listen(port, () => {
     console.log('engineering ed server running on port: ',port);
 })
