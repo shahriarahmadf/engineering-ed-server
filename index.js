@@ -10,9 +10,10 @@ app.get('/courses', (req,res) => {
     res.send(courses);
 })
 
-app.get('/courses/:courses_id', (req,res) => {
-    const courses_id = req.params.course_id;
-    const selectedCourse = courses.find(course => course.courses_id === courses_id);
+app.get('/course-details/:course_id', (req,res) => {
+    const course_id = req.params.course_id;
+    console.log(course_id);
+    const selectedCourse = courses.find(course => course.course_id === course_id);
     res.send(selectedCourse);
 })
 
